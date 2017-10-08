@@ -15268,7 +15268,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer: The 3 that are appropriate will be Gaussian Naive Bayes, K-Nearest Neighbours and Gradient Boosting.</p>
+<p>Answer: The 3 that are appropriate will be Gaussian Naive Bayes, K-Nearest Neighbours and Gradient Boosting.</p>
 <p><strong>GaussianNB:</strong></p>
 <p>Gaussian Naive Bayes is an extension of Naive Bayes classifier for real valued input. In general for Naive Bayes classifiers, one real world application would be to do classify text into different topics using Naive Bayes algorithm and a bag of words approach. See <a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html">here</a> for details.</p>
 <p>The strong points about Naive Bayes algorithms are that they are easy to train and converges quickly, and works well when there are many features to consider. One downside would be that Naive Bayes algorithms assumes independence between features (conditional independence) and hence cannot model the probability given interaction between input features.</p>
@@ -15278,10 +15278,9 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <p>An advantage of KNN would be its ease of implementation and little training time required. However, at test phase it requires a log n + k runtime which may not be effective in practice in production environments which may require the testing time to be as latent as possible. Memory issues may be a problem as well as training data needs to be kept in memory for computation at test time.</p>
 <p>In this case, total number of points (36,000 points) is not really considered big for modern day computers, so we can try to take advantage of this to train a KNN classifier for this set of data.</p>
 <p><strong>Gradient Boosting</strong></p>
-<p>Gradient boosting is widely used for prediction models due to its effectiveness (one example would be in Expedia according to this <a href="http://www.dataminingblog.com/gradient-boosting-machine-a-brief-introduction/">article</a>. There are also many cases where Gradient boosting is used in Kaggle competitions due to its strong predictive powers as well.</p>
+<p>Gradient boosting is widely used for prediction models due to its effectiveness (one example would be in Expedia according to this <a href="http://www.dataminingblog.com/gradient-boosting-machine-a-brief-introduction/">article</a>). There are also many cases where Gradient boosting is used in Kaggle competitions due to its strong predictive powers as well.</p>
 <p>Advantage of Gradient Boosting would be its strong predictive powers and have been shown to achieve better results than its ensemble counterpart which is Random Forests (see <a href="https://databricks.com/blog/2015/01/21/random-forests-and-boosting-in-mllib.html">this</a>). However, Gradient boosting classifiers are much harder to tune and train, and when considering predictions at a large scale, it is much harder to parallize the computations as well. Nonetheless, if tuned well the results can prove to be quite accurate for Gradient boosting.</p>
 <p>For this dataset, we can take advantage of the fact that there are not too many records in the model (36,000 records) and thus spend more time in tuning the parameters and to obtain a better classifer.</p>
-<p>**</p>
 
 </div>
 </div>
@@ -16240,11 +16239,10 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
+<p>Answer:</p>
 <p>For me, I would choose Gradient Boosting Classifier(GBC) as the best model to use on the student data based on the metrics shown in the above visualization.</p>
 <p>One reason why I would choose GBC as the model is due to its relatively high Fbeta-score on the test set. From the visualization on the bottom right, we can see that the Fbeta score for GBT on the test set is higher than that for the other 2 classifiers (KNN and Naive Bayes). Also, while the time taken to train a GBC on the entire training set may take awhile (7 seconds based on the top left graph), it is still lesser comparing it with the time taken for prediction using KNN (20 seconds on test set using entire training set as shown on the bottom right graph). As for Naive Bayes, while NB is considered computationally cheap, the decrease in accuracy and F-score is too much for it to be considered a viable candidate for the final model. Hence due to these reasons, I chose GBC as the final model.</p>
 <p>In this case, since predicting accurately the people who have income over 50k is crucial and training on this dataset does not take that much time, it is a good chance to use GBC to tune it more finely and improve the predictive power of the model.</p>
-<p>**</p>
 
 </div>
 </div>
@@ -16268,11 +16266,10 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
-<p>The final model choosen uses a method called gradient boosting, a method that uses many different models instead of just a single model for prediction. Finally, when making predictions, we then combine the results from this different models and from there generate a final prediction based on these results.</p>
+<p>Answer:</p>
+<p>The final model choosen uses a method called gradient boosting. It is a method that uses many different models instead of just a single model for prediction. Finally, when making predictions, we then combine the results from this different models and from there generate a final prediction based on these results.</p>
 <p>When training the model, we train a group of models which we call weak learners, and each individual model perform well in a specific context but not as well beyond that specific context it is trained in. Finally, during predictiion, we bundle the effectiveness of the individual models into a single model by assigning different weights to each model, which will then perform well in all of the contexts that the individual models were trained in. Intuitively, this approach is like having project teams where each person in the project (weak learner) specializes in one area and the project manager (gradient boosting) then ties the project team together to deliver a successful project overall.</p>
 <p>References: <a href="https://www.quora.com/What-is-an-intuitive-explanation-of-Gradient-Boosting">Quora Question on Gradient Boosting Intuition</a></p>
-<p>**</p>
 
 </div>
 </div>
@@ -16454,12 +16451,11 @@ My optimized model's accuracy and F-score as shown above is higher than that of 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
+<p>Answer:</p>
 <p>Age: Age would be important as it would be hard for young people, fresh graduates out of college in general to be earning more than 50,000. Hence age can potentially contain information of those people who have worked for a few years and from there narrow down people who have income more than 50k.</p>
 <p>Occupation: From the list of occupations, some occupations seem to be higher paid than the others. These could potentially shed information on which people are likely to have income greater than 50,000 based on their occupations.</p>
 <p>Education: Someone who has high education level compared to someone who has low education level is potentially more likely to have higher income.</p>
 <p>Capital Gain and Capital Loss: It is likely that these two features can help to tell if a person has income over 50,000 as these two shows the influx and outflow of the capital of a person and high inflow and outflow would likely imply this person has a high income to begin with.</p>
-<p>**</p>
 
 </div>
 </div>
@@ -16855,10 +16851,9 @@ mvkH8Bk/gOfepb8AAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
+<p>Answer:</p>
 <p>The results from DecisionTreeClassifier shows Age, capital gain, hours per week, marital status_married-civ_spouse, and education num are important features. Compared to my answer, I nailed down regarding capital gain and age, and since education_num is another way of depicting education level just that it is in a continuous case, my hypothesis regarding education level is somewhat similar as well. Surprisingly, the marital-status_married-civ-spouse. From online sources (<a href="https://answers.yahoo.com/question/index?qid=20111128051933AAAb8hH">here</a>), it seems that married-civ-spouse means married to a spouse who is not adsent or away in armed forces. Hence it seems surprising, but not very surprising that whether a person is happily married would determine their income level.
 Another one that I did not capture in my answer is hours_per_week, and it seems that people who work more hours per week is more likely to have a stable income as compared to those with lesser hours per week and may not have a stable job.</p>
-<p>**</p>
 
 </div>
 </div>
@@ -16945,9 +16940,8 @@ F-score on testing data: 0.7031
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer:</p>
+<p>Answer:</p>
 <p>The final model based on reduced data actually did perform much more poorly compared to on full data, as the F-score and accuracy both dropped after removing and only keeping the top 5 features. Even if training time was a factor, I would still recommend using the full data as the drop in F-score is quite signifant compared to using full data (more than 0.4), and the reduction in training time I believe still would not be worth it to justify the loss in predictive power of the model.</p>
-<p>**</p>
 
 </div>
 </div>
